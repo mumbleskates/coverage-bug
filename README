@@ -1,0 +1,15 @@
+This repo exemplifies some broken behavior in the `coverage` module.
+Specifically, in python 3.8 (but not 3.7 or before), some break statements
+have no coverage as if they were never run, even if they very clearly were.
+
+With a virtualenv set up:
+
+$ pip install -e .[test]
+$ tox
+
+The frozen requirements of the broken state are also written in
+freeze_broken.txt, so it can also be installed with
+`pip install -r freeze_broken.txt` when in the coverage-bug folder.
+
+pytest also reads from tox.ini so for a quick reproduction of 3.8 only you can
+simply install in a python3.8 virtualenv and run `pytest`.
