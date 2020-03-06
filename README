@@ -2,6 +2,8 @@ This repo exemplifies some broken behavior in the `coverage` module.
 Specifically, in python 3.8 (but not 3.7 or before), some break statements
 have no coverage as if they were never run, even if they very clearly were.
 
+More information about this bug: https://github.com/nedbat/coveragepy/issues/772
+
 With a virtualenv set up:
 
 $ pip install -e .[test]
